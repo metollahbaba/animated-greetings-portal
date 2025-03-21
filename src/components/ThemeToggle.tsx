@@ -6,9 +6,10 @@ import { cn } from '@/lib/utils';
 
 interface ThemeToggleProps {
   className?: string;
+  style?: React.CSSProperties;
 }
 
-export const ThemeToggle = ({ className }: ThemeToggleProps) => {
+export const ThemeToggle = ({ className, style }: ThemeToggleProps) => {
   const [isDark, setIsDark] = useState(false);
 
   // Check system preference on mount
@@ -32,6 +33,7 @@ export const ThemeToggle = ({ className }: ThemeToggleProps) => {
       size="icon"
       onClick={toggleTheme}
       className={cn('rounded-full transition-all duration-300', className)}
+      style={style}
     >
       {isDark ? (
         <Moon className="h-5 w-5 transition-all" />

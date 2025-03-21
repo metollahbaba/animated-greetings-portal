@@ -15,12 +15,14 @@ interface LanguageSwitcherProps {
   language: Language;
   onLanguageChange: (language: Language) => void;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export const LanguageSwitcher = ({ 
   language, 
   onLanguageChange,
-  className 
+  className,
+  style
 }: LanguageSwitcherProps) => {
   const handleSelectLanguage = (newLang: Language) => {
     onLanguageChange(newLang);
@@ -36,6 +38,7 @@ export const LanguageSwitcher = ({
             "flex items-center gap-1 rounded-full px-3 transition-all duration-300 hover:bg-muted", 
             className
           )}
+          style={style}
         >
           <Globe className="h-4 w-4" />
           <span className="text-sm font-medium capitalize">
